@@ -14,26 +14,38 @@ body {
 }
 
 header {
-  width: 60%;
-  height: 100%;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  justify-content: center;
 }
 
 h1, h2 {
+  width: 50vw;
   margin: 10px 0;
-  font-size: 36px;
+  font-size: 44px;
   font-weight: 600;
-  letter-spacing: .1em;
+  letter-spacing: .16em;
 }
 
 h1 {
-  text-align: left;
-  transform: translateY(50px) skewY(15deg);
+  text-align: right;
+  transform: translate(-40px, 0) skewY(-20deg);
 }
 
 h2 {
-  text-align: right;
-  transform: translateY(-50px) skewY(-15deg);
+  text-align: left;
+  transform: translate(40px, 0) skewY(-20deg);
+}
+
+figure {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 8px solid blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: -1;
 }
