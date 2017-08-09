@@ -1,4 +1,39 @@
 html, body {
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+header {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+h1, h2 {
+  margin: 10px 0;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+h1 {
+  text-align: left;
+  transform: translateY(50px) skewY(15deg);
+}
+
+h2 {
+  text-align: right;
+  transform: translateY(-50px) skewY(-15deg);
 }
