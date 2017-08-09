@@ -1,7 +1,7 @@
 html, body {
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif;
 }
 
 body {
@@ -25,7 +25,7 @@ h1, h2 {
   margin: 10px 0;
   font-size: 36px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
 }
 
 h1 {
