@@ -34,7 +34,7 @@ figure {
   border: 24px solid rebeccapurple;
   opacity: 0;
   z-index: -1;
-  animation: pulse 5s cubic-bezier(.23, 1, .32, 1) infinite;
+  animation: pulse 4s cubic-bezier(.19, 1, .22, 1) infinite;
   pointer-events: none;
 
   position: absolute;
@@ -46,12 +46,12 @@ figure {
 }
 
 @keyframes pulse {
-  10% {
+  20% {
     opacity: 1;
   }
-  80%, 100% {
-    width: 460px;
-    height: 460px;
+  100% {
+    width: 500px;
+    height: 500px;
     border-width: 0;
     opacity: 0;
   }
