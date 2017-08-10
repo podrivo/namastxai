@@ -24,7 +24,7 @@ figure {
   border: 24px solid rebeccapurple;
   opacity: 0;
   z-index: -1;
-  /*animation: pulse 4s cubic-bezier(.19, 1, .22, 1) infinite;*/
+  animation: pulse 4s cubic-bezier(.19, 1, .22, 1) infinite;
   pointer-events: none;
 
   position: absolute;

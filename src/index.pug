@@ -2,8 +2,7 @@ extends pug/global
 block content
   
   header
-    h1 alani marcel—terapeuta kósmico
-    //- h2 terapeuta kósmico
+    h1#title alani marcel—terapeuta kósmico
   figure
   
   - var rows = 20
@@ -11,5 +10,5 @@ block content
   - var grid = rows * columns
   ul.grid
     - for (var x = 1; x < (grid + 1); x++)
-      li.space= ''
-      //- li.space= x
+      li= ''
+      //- li= x
