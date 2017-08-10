@@ -1,0 +1,18 @@
+$number: 15;
+$array: ();
+@for $i from 1 through $number {
+  //#{$array}
+  $array: append($array, $i);
+}
+
+  // div
+  //   &:nth-child(#{$i})
+  //     &:after
+  //       content: ""
+
+.grid {
+  position: absolute;
+  top: 0;
+  display: grid;
+  grid-template-rows: $array;
+}
