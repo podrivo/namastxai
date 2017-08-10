@@ -1,18 +1,63 @@
-$number: 15;
-$array: ();
-@for $i from 1 through $number {
-  //#{$array}
-  $array: append($array, $i);
-}
-
-  // div
-  //   &:nth-child(#{$i})
-  //     &:after
-  //       content: ""
+$columns: 20;
+$rows:    16;
 
 .grid {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
+  text-align: center;
+
   display: grid;
-  grid-template-rows: $array;
+  grid-template-rows: repeat($rows, 1fr);
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: 3px;
+
+  z-index: 9999;
+
+  > .space {
+    font-size: x-small;
+    font-weight: bold;
+    color: lightgray;
+    border-radius: 3px;
+    background-color: rgba(102,51,153,.05);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: '';
+      width: 0px;
+      height: 0px;
+      border-radius: 100%;
+      border: 6px solid rebeccapurple;
+      // opacity: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+
+    &:hover::after {
+      animation: pulseHover 4s cubic-bezier(.19, 1, .22, 1);
+    }
+  }
+}
+
+@keyframes pulseHover {
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 50px;
+    height: 50px;
+    border-width: 0;
+    opacity: 0;
+  }
 }
