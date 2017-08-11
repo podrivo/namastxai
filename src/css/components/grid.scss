@@ -30,8 +30,8 @@ $rows:    16;
 
     &::after {
       content: '';
-      width: 0px;
-      height: 0px;
+      width: 0;
+      height: 0;
       border-radius: 100%;
       border: 6px solid rebeccapurple;
       opacity: 0;
