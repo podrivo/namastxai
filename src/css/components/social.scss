@@ -4,11 +4,12 @@
   position: absolute;
   top: 0;
   right: 0;
-  margin: 25px;
+  margin: 30px;
   font-size: 12px;
   font-weight: bold;
 
   > li a {
+    margin: 0 12px;
     text-decoration: none;
     color: black;
     border-bottom: 2px solid transparent;
