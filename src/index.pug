@@ -1,14 +1,9 @@
 extends pug/global
 block content
   
-  header
-    h1#title alani marcel—terapeuta kósmico
   figure
-  
-  - var rows = 20
-  - var columns = 16
-  - var grid = rows * columns
-  ul.grid
-    - for (var x = 1; x < (grid + 1); x++)
-      li= ''
-      //- li= x
+  header
+    h1 alani marcel—terapeuta kósmico
+  ul.social
+    li #[a(href='javascript:void(0)' title='Facebook' target='_blank') Facebook]—
+    li #[a(href='javascript:void(0)' target='_blank') Instagram]

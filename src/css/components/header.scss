@@ -7,8 +7,8 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  z-index: 100;
-  position: relative;
+  z-index: -1;
+  position: absolute;
 }
 
 h1, h2 {
@@ -23,7 +23,7 @@ figure {
   border-radius: 50%;
   border: 24px solid rebeccapurple;
   opacity: 0;
-  z-index: -1;
+  z-index: -2;
   animation: pulse 4s cubic-bezier(.19, 1, .22, 1) infinite;
   pointer-events: none;
 
