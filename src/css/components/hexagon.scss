@@ -1,3 +1,37 @@
+$largura: 80px;
+$altura: $largura;
+$distancia: 15px;
+
 .hexagon {
-  color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  ul {
+    width: $largura;
+    height: $altura;
+    background: rgba(0,0,0,.2);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  li {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f33;
+    position: absolute;
+
+    &:nth-child(1) {top: 0; left: $distancia;}
+    &:nth-child(2) {top: 0; right: $distancia;}
+    &:nth-child(3) {top: calc(#{$altura}/2); right: 0;}
+    &:nth-child(4) {top: $altura; right: $distancia;}
+    &:nth-child(5) {top: $altura; left: $distancia;}
+    &:nth-child(6) {top: calc(#{$altura}/2); left: 0;}
+  }
 }
