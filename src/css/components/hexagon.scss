@@ -1,6 +1,5 @@
-$largura: 80px;
-$altura: $largura;
-$distancia: 15px;
+$lado: 80px;
+$pitagoras: 15px;
 
 .hexagon {
   width: 100%;
@@ -13,25 +12,71 @@ $distancia: 15px;
   left: 0;
 
   ul {
-    width: $largura;
-    height: $altura;
-    background: rgba(0,0,0,.2);
+    width: $lado;
+    height: $lado;
+    background: rgba(0, 0, 0, .05);
     border-radius: 50%;
     position: relative;
   }
 
   li {
-    width: 6px;
-    height: 6px;
+    $lado1: $lado;
+    width: $lado1;
+    height: $lado1;
     border-radius: 50%;
-    background: #f33;
+    border: 25px solid rebeccapurple;
     position: absolute;
+    animation: pulse-hex 8s cubic-bezier(.19, 1, .22, 1) infinite;
 
-    &:nth-child(1) {top: 0; left: $distancia;}
-    &:nth-child(2) {top: 0; right: $distancia;}
-    &:nth-child(3) {top: calc(#{$altura}/2); right: 0;}
-    &:nth-child(4) {top: $altura; right: $distancia;}
-    &:nth-child(5) {top: $altura; left: $distancia;}
-    &:nth-child(6) {top: calc(#{$altura}/2); left: 0;}
+    // position
+    &:nth-child(1) {
+      top: calc(-#{$lado1}/2);
+      left: $pitagoras;
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      top: calc(-#{$lado1}/2);
+      right: $pitagoras;
+      animation-delay: .5s;
+    }
+
+    &:nth-child(3) {
+      top: calc((#{$lado}/2) - calc(#{$lado1}/2));
+      right: calc(-#{$lado1}/2);
+      animation-delay: 1s;
+    }
+
+    &:nth-child(4) {
+      top: calc((#{$lado}/2) - calc(#{$lado1}/2));
+      left: calc(-#{$lado1}/2);
+      animation-delay: 1.5s;
+    }
+
+    &:nth-child(5) {
+      top: calc(#{$lado} - calc(#{$lado1}/2));
+      right: $pitagoras;
+      animation-delay: 2s;
+    }
+
+    &:nth-child(6) {
+      top: calc(#{$lado} - calc(#{$lado1}/2));
+      left: $pitagoras;
+      animation-delay: 2.5s;
+    }
+  }
+}
+
+@keyframes pulse-hex {
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 800px;
+    height: 800px;
+    transform: translate(-400px, -400px);
+    border-width: 0;
+    opacity: 0;
   }
 }
