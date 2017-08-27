@@ -1,5 +1,21 @@
-$lado: 80px;
-$pitagoras: 15px;
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+
+  @return $x1;
+}
+
+$lado-circle: 180;
+$lado-hex: $lado-circle / 2;
+$lado-pulse: 1;
+
+$altura-hex: sqrt(($lado-hex * $lado-hex) - (($lado-hex / 2) * ($lado-hex / 2)));
+$altura-fix: $lado-hex - $altura-hex;
 
 .hexagon {
   width: 100%;
@@ -10,62 +26,65 @@ $pitagoras: 15px;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 99;
 
   ul {
-    width: $lado;
-    height: $lado;
-    background: rgba(0, 0, 0, .05);
+    width: $lado-circle + px;
+    height: $lado-circle + px;
+    background: rgba(102, 51, 153, .6);
     border-radius: 50%;
     position: relative;
   }
 
   li {
-    $lado1: $lado;
-    width: $lado1;
-    height: $lado1;
+    width: $lado-pulse + px;
+    height: $lado-pulse + px;
     border-radius: 50%;
-    border: 25px solid rebeccapurple;
+    border: 2px solid white;
     position: absolute;
-    animation: pulse-hex 8s cubic-bezier(.19, 1, .22, 1) infinite;
+    // animation: pulse-hex 8s cubic-bezier(.19, 1, .22, 1) infinite;
 
     // position
     &:nth-child(1) {
-      top: calc(-#{$lado1}/2);
-      left: $pitagoras;
-      animation-delay: 0s;
+      top: $altura-fix + px;
+      left: ($lado-hex / 2) + px;
+      // animation-delay: 0s;
     }
 
     &:nth-child(2) {
-      top: calc(-#{$lado1}/2);
-      right: $pitagoras;
-      animation-delay: .5s;
+      top: $altura-fix + px;
+      right: ($lado-hex / 2) + px;
+      // animation-delay: .5s;
     }
 
     &:nth-child(3) {
-      top: calc((#{$lado}/2) - calc(#{$lado1}/2));
-      right: calc(-#{$lado1}/2);
-      animation-delay: 1s;
+      top: $lado-hex + px;
+      left: 0;
+      // animation-delay: 1s;
     }
 
     &:nth-child(4) {
-      top: calc((#{$lado}/2) - calc(#{$lado1}/2));
-      left: calc(-#{$lado1}/2);
-      animation-delay: 1.5s;
+      top: $lado-hex + px;
+      right: 0;
+      // animation-delay: 1.5s;
     }
 
     &:nth-child(5) {
-      top: calc(#{$lado} - calc(#{$lado1}/2));
-      right: $pitagoras;
-      animation-delay: 2s;
+      bottom: $altura-fix + px;
+      right: ($lado-hex / 2) + px;
+      // animation-delay: 2s;
     }
 
     &:nth-child(6) {
-      top: calc(#{$lado} - calc(#{$lado1}/2));
-      left: $pitagoras;
-      animation-delay: 2.5s;
+      bottom: $altura-fix + px;
+      left: ($lado-hex / 2) + px;
+      // animation-delay: 2.5s;
     }
   }
 }
+
+$pulse: 800px;
+$pulse-half: -($pulse / 2);
 
 @keyframes pulse-hex {
   20% {
@@ -73,9 +92,9 @@ $pitagoras: 15px;
   }
 
   100% {
-    width: 800px;
-    height: 800px;
-    transform: translate(-400px, -400px);
+    width: $pulse;
+    height: $pulse;
+    transform: translate(#{$pulse-half}, #{$pulse-half});
     border-width: 0;
     opacity: 0;
   }
