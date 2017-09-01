@@ -26,6 +26,15 @@ $side-hex-half: $side-hex / 2;
 $altura-hex: sqrt(($side-hex * $side-hex) - (($side-hex / 2) * ($side-hex / 2)));
 $altura-fix: $side-hex - $altura-hex;
 
+@for $x from 1 through 16 {
+  .hexagon ul:nth-child(#{$x}) {
+
+    @for $y from 1 through 6 {
+      li:nth-child(#{$y}) {animation-delay: ((1 / 10) * $x) + s;}
+    }
+  }
+}
+
 .hexagon {
   width: 100%;
   height: 100%;
@@ -41,9 +50,12 @@ $altura-fix: $side-hex - $altura-hex;
     width: $side-circle + px;
     height: $side-circle + px;
     border-radius: 50%;
-    // border: 1px solid rgba(102, 51, 153, .4);
-    background: rgba(102, 51, 153, .02);
+    // background: rgba(102, 51, 153, .02);
     position: absolute;
+    // opacity: 0;
+    // transform: scale(0);
+    // transform-origin: center;
+    // animation: pulse-hex 10s cubic-bezier(.19, 1, .22, 1) infinite;
 
     &:nth-child(2) {transform: translateY((-$side-circle + $circle-fix) + px);}
     &:nth-child(3) {transform: translateY(($side-circle - $circle-fix) + px);}
@@ -91,7 +103,10 @@ $altura-fix: $side-hex - $altura-hex;
     // border: 1px solid rgba(102, 51, 153, .4);
     background: rgba(102, 51, 153, .02);
     position: absolute;
-    // animation: pulse-hex 8s cubic-bezier(.19, 1, .22, 1) infinite;
+    transform: scale(0);
+    transform-origin: center;
+    animation: pulse-hex 8s cubic-bezier(.19, 1, .22, 1) infinite;
+    animation: pulse-hex 8s ease infinite;
 
     // position
     &:nth-child(1) {
@@ -103,7 +118,7 @@ $altura-fix: $side-hex - $altura-hex;
     &:nth-child(2) {
       top: ($altura-fix - $side-pulse-half) + px;
       right: ($side-hex-half - $side-pulse-half) + px;
-      // animation-delay: .5s;
+      // animation-delay: .7s;
     }
 
     &:nth-child(3) {
@@ -121,7 +136,7 @@ $altura-fix: $side-hex - $altura-hex;
     &:nth-child(5) {
       bottom: ($altura-fix - $side-pulse-half) + px;
       right: ($side-hex-half - $side-pulse-half) + px;
-      // animation-delay: 2s;
+      // animation-delay: 2.2s;
     }
 
     &:nth-child(6) {
@@ -169,14 +184,15 @@ $pulse-half: -($pulse / 2);
 
 @keyframes pulse-hex {
   20% {
-    opacity: 1;
+    // opacity: 1;
   }
 
-  100% {
-    width: $pulse;
-    height: $pulse;
-    transform: translate(#{$pulse-half}, #{$pulse-half});
-    border-width: 0;
-    opacity: 0;
+  50% {
+    // width: $pulse;
+    // height: $pulse;
+    // transform: translate(#{$pulse-half}, #{$pulse-half});
+    transform: scale(1.2);
+    // border-width: 0;
+    // opacity: 0;
   }
 }
