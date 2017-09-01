@@ -10,21 +10,10 @@ block content
     li.pulse
   
   section.hexagon
-    ul
-      - for (var x = 1; x < (6 + 1); x++)
-        li= ''
-    ul
-      - for (var x = 1; x < (6 + 1); x++)
-        li= ''
-    ul
-      - for (var x = 1; x < (6 + 1); x++)
-        li= ''
-    ul
-      - for (var x = 1; x < (6 + 1); x++)
-        li= ''
-    ul
-      - for (var x = 1; x < (6 + 1); x++)
-        li= ''
+    - for (var x = 1; x < (13 + 1); x++)
+      ul
+        - for (var y = 1; y < (6 + 1); y++)
+          li
   
   ul.social
     li #[a(href='javascript:void(0)' title='Facebook' target='_blank') Facebook]

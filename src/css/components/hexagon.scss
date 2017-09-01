@@ -49,6 +49,39 @@ $altura-fix: $side-hex - $altura-hex;
     &:nth-child(3) {transform: translateY(($side-circle - $circle-fix) + px);}
     &:nth-child(4) {transform: translateX(-$side-circle + px);}
     &:nth-child(5) {transform: translateX($side-circle + px);}
+
+    &:nth-child(6) {transform: translateY((-$side-circle + $circle-fix) * 2 + px);}
+    &:nth-child(7) {transform: translateY(($side-circle - $circle-fix) * 2 + px);}
+    &:nth-child(8) {transform: translateX(-$side-circle * 2 + px);}
+    &:nth-child(9) {transform: translateX($side-circle * 2 + px);}
+
+    &:nth-child(10) {
+      transform:
+        translateY(-$side-circle + $circle-fix + px)
+        translateX(-$side-circle + px)
+      ;
+    }
+
+    &:nth-child(11) {
+      transform:
+        translateY(-$side-circle + $circle-fix + px)
+        translateX($side-circle + px)
+      ;
+    }
+
+    &:nth-child(12) {
+      transform:
+        translateY($side-circle - $circle-fix + px)
+        translateX(-$side-circle + px)
+      ;
+    }
+
+    &:nth-child(13) {
+      transform:
+        translateY($side-circle - $circle-fix + px)
+        translateX($side-circle + px)
+      ;
+    }
   }
 
   li {
