@@ -42,7 +42,7 @@ $altura-fix: $side-hex - $altura-hex;
     height: $side-circle + px;
     border-radius: 50%;
     // border: 1px solid rgba(102, 51, 153, .4);
-    background: rgba(102, 51, 153, .035);
+    background: rgba(102, 51, 153, .02);
     position: absolute;
 
     &:nth-child(2) {transform: translateY((-$side-circle + $circle-fix) + px);}
@@ -89,7 +89,7 @@ $altura-fix: $side-hex - $altura-hex;
     height: $side-pulse + px;
     border-radius: 50%;
     // border: 1px solid rgba(102, 51, 153, .4);
-    background: rgba(102, 51, 153, .035);
+    background: rgba(102, 51, 153, .02);
     position: absolute;
     // animation: pulse-hex 8s cubic-bezier(.19, 1, .22, 1) infinite;
 
