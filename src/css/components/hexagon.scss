@@ -30,7 +30,7 @@ $altura-fix: $side-hex - $altura-hex;
   .hexagon ul:nth-child(#{$x}) {
 
     @for $y from 1 through 6 {
-      li:nth-child(#{$y}) {animation-delay: ((1 / 10) * $x) + s;}
+      li:nth-child(#{$y}) {animation-delay: ((1 / 8) * $x) + s;}
     }
   }
 }
