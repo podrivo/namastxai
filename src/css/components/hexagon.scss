@@ -12,12 +12,12 @@
 }
 
 // hexagon variables
-$side-circle: 200;
+$side-circle: 140;
 $side-circle-half: $side-circle / 2;
-$circle-fix: $side-circle / 7.692;
+$circle-fix: 19;
 
 
-$side-pulse: 200;
+$side-pulse: 140;
 $side-pulse-half: $side-pulse / 2;
 
 $side-hex: $side-circle / 2;
@@ -26,7 +26,7 @@ $side-hex-half: $side-hex / 2;
 $altura-hex: sqrt(($side-hex * $side-hex) - (($side-hex / 2) * ($side-hex / 2)));
 $altura-fix: $side-hex - $altura-hex;
 
-@for $x from 1 through 16 {
+@for $x from 1 through 1 {
   .hexagon {
     ul:nth-child(#{$x}) {
       @for $y from 1 through 6 {
@@ -90,11 +90,12 @@ $altura-fix: $side-hex - $altura-hex;
     height: $side-pulse + px;
     border-radius: 50%;
     // border: 1px solid rgba(102, 51, 153, .4);
-    background: rgba(102, 51, 153, .02);
+    background: rgba(102, 51, 153, .03);
     position: absolute;
-    transform: scale(0);
+    // transform: scale(.9);
+    opacity: 0;
     transform-origin: center;
-    animation: pulse-hex 8s infinite;
+    animation: pulse-hex 10s infinite;
 
     // position
     &:nth-child(1) {
@@ -175,11 +176,12 @@ $pulse-half: -($pulse / 2);
     // opacity: 1;
   }
 
-  50% {
+  40%, 60% {
     // width: $pulse;
     // height: $pulse;
     // transform: translate(#{$pulse-half}, #{$pulse-half});
-    transform: scale(1.2);
+    transform: scale(1);
+    opacity: 1;
     // border-width: 0;
     // opacity: 0;
   }
