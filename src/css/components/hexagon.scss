@@ -27,10 +27,11 @@ $altura-hex: sqrt(($side-hex * $side-hex) - (($side-hex / 2) * ($side-hex / 2)))
 $altura-fix: $side-hex - $altura-hex;
 
 @for $x from 1 through 16 {
-  .hexagon ul:nth-child(#{$x}) {
-
-    @for $y from 1 through 6 {
-      li:nth-child(#{$y}) {animation-delay: ((1 / 8) * $x) + s;}
+  .hexagon {
+    ul:nth-child(#{$x}) {
+      @for $y from 1 through 6 {
+        li:nth-child(#{$y}) {animation-delay: ((1 / 8) * $x) + s;}
+      }
     }
   }
 }
@@ -68,31 +69,19 @@ $altura-fix: $side-hex - $altura-hex;
     &:nth-child(9) {transform: translateX($side-circle * 2 + px);}
 
     &:nth-child(10) {
-      transform:
-        translateY(-$side-circle + $circle-fix + px)
-        translateX(-$side-circle + px)
-      ;
+      transform: translateY(-$side-circle + $circle-fix + px) translateX(-$side-circle + px);
     }
 
     &:nth-child(11) {
-      transform:
-        translateY(-$side-circle + $circle-fix + px)
-        translateX($side-circle + px)
-      ;
+      transform: translateY(-$side-circle + $circle-fix + px) translateX($side-circle + px);
     }
 
     &:nth-child(12) {
-      transform:
-        translateY($side-circle - $circle-fix + px)
-        translateX(-$side-circle + px)
-      ;
+      transform: translateY($side-circle - $circle-fix + px) translateX(-$side-circle + px);
     }
 
     &:nth-child(13) {
-      transform:
-        translateY($side-circle - $circle-fix + px)
-        translateX($side-circle + px)
-      ;
+      transform: translateY($side-circle - $circle-fix + px) translateX($side-circle + px);
     }
   }
 
@@ -105,8 +94,7 @@ $altura-fix: $side-hex - $altura-hex;
     position: absolute;
     transform: scale(0);
     transform-origin: center;
-    animation: pulse-hex 8s cubic-bezier(.19, 1, .22, 1) infinite;
-    animation: pulse-hex 8s ease infinite;
+    animation: pulse-hex 8s infinite;
 
     // position
     &:nth-child(1) {
