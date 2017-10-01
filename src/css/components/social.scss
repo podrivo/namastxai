@@ -12,13 +12,13 @@
   a {
     margin: 0 12px;
     text-decoration: none;
-    color: black;
+    color: inherit;
     border-bottom: 2px solid transparent;
     transition: border-bottom-color .3s;
 
     &:hover {
-      color: rebeccapurple;
-      border-bottom-color: rebeccapurple;
+      color: inherit;
+      border-bottom-color: inherit;
     }
   }
 }
