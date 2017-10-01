@@ -9,12 +9,13 @@ block content
     li.pulse
     li.pulse
   
-  section.hexagon-sincos.dev
-    - for (var x = 0; x < 1; x++)
+  section.hexagon-sincos
+    - for (var a = 0; a < 1; a++)
       section.layer
-        ul
-          - for (var y = 0; y < 6; y++)
-            li
+        - for (var b = 0; b < 6; b++)
+          ul
+            - for (var c = 0; c < 6; c++)
+              li
     
     //- always in the center
     section.center
