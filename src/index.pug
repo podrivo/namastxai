@@ -10,10 +10,17 @@ block content
     li.pulse
   
   section.hexagon-sincos
-    - for (var x = 0; x < (24 + 1); x++)
-      ul
-        - for (var y = 0; y < 6; y++)
-          li
+    - for (var a = 0; a < 2; a++)
+      .layer
+        - for (var b = 0; b < 6; b++)
+          ul
+            - for (var c = 0; c < 6; c++)
+              li
+    
+    //- always in the center
+    ul
+      - for (var c = 0; c < 6; c++)
+        li
   
   ul.social
     li #[a(href='javascript:void(0)' title='Facebook' target='_blank') Facebook]

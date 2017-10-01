@@ -90,63 +90,85 @@ $side-circle-double: $side-circle * 2;
   left: 0;
   z-index: 99;
 
-  // position ul 2-7
-  @for $y from 2 through 7 {
-    //deg to rad
-    $rad: (60 * $y) * (pi() / 180);
+  .layer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
 
-    ul:nth-child(#{$y}) {
-      transform:
-      translateY($side-circle * sin($rad) + px)
-      translateX($side-circle * cos($rad) + px);
+    // position ul 2-7
+    // @for $x from 2 through 7 {
+    //   //deg to rad
+    //   $rad: (60 * $x) * (pi() / 180);
+    //
+    //   ul:nth-child(#{$x}) {
+    //     transform:
+    //     translateY($side-circle * sin($rad) + px)
+    //     translateX($side-circle * cos($rad) + px);
+    //   }
+    // }
+
+    // position ul 2-7
+    @for $x from 1 through 6 {
+      //deg to rad
+      $rad: (60 * $x) * (pi() / 180);
+
+      ul:nth-child(#{$x}) {
+        transform:
+        translateY($side-circle * sin($rad) + px)
+        translateX($side-circle * cos($rad) + px);
+      }
     }
   }
+
 
   // position ul 8-14
-  @for $y from 8 through 13 {
-    $teste: $y - 7;
-    //deg to rad
-    $rad: (60 * $teste) * (pi() / 180);
-
-    ul:nth-child(#{$y}) {
-      transform:
-      translateY(($side-circle + $side-circle-half) * sin($rad) + px)
-      translateX(($side-circle + $side-circle-half) * cos($rad) + px);
-    }
-  }
+  // @for $y from 8 through 13 {
+  //   $teste: $y - 7;
+  //   //deg to rad
+  //   $rad: (60 * $teste) * (pi() / 180);
+  //
+  //   ul:nth-child(#{$y}) {
+  //     transform:
+  //     translateY(($side-circle + $side-circle-half) * sin($rad) + px)
+  //     translateX(($side-circle + $side-circle-half) * cos($rad) + px);
+  //   }
+  // }
 
   // position ul 14-19
-  @for $y from 14 through 19 {
-    $teste: $y - 13;
-    //deg to rad
-    $rad: (60 * $teste) * (pi() / 180);
-
-    ul:nth-child(#{$y}) {
-      transform:
-      translateY($side-circle-double * sin($rad) + px)
-      translateX($side-circle-double * cos($rad) + px);
-    }
-  }
+  // @for $y from 14 through 19 {
+  //   $teste: $y - 13;
+  //   //deg to rad
+  //   $rad: (60 * $teste) * (pi() / 180);
+  //
+  //   ul:nth-child(#{$y}) {
+  //     transform:
+  //     translateY($side-circle-double * sin($rad) + px)
+  //     translateX($side-circle-double * cos($rad) + px);
+  //   }
+  // }
 
   // position ul 20-25
-  @for $y from 20 through 25 {
-    $teste: $y - 19;
-    //deg to rad
-    $rad: (60 * $teste) * (pi() / 180);
-
-    ul:nth-child(#{$y}) {
-      transform:
-      translateY(($side-circle-double + $side-circle-half) * sin($rad) + px)
-      translateX(($side-circle-double + $side-circle-half) * cos($rad) + px);
-    }
-  }
+  // @for $y from 20 through 25 {
+  //   $teste: $y - 19;
+  //   //deg to rad
+  //   $rad: (60 * $teste) * (pi() / 180);
+  //
+  //   ul:nth-child(#{$y}) {
+  //     transform:
+  //     translateY(($side-circle-double + $side-circle-half) * sin($rad) + px)
+  //     translateX(($side-circle-double + $side-circle-half) * cos($rad) + px);
+  //   }
+  // }
 
   // position li 1-6
-  @for $y from 1 through 6 {
+  @for $x from 1 through 6 {
     //deg to rad
-    $rad: (60 * $y) * (pi() / 180);
+    $rad: (60 * $x) * (pi() / 180);
 
-    li:nth-child(#{$y}) {
+    li:nth-child(#{$x}) {
       top: ($side-circle-half * sin($rad) + px);
       left: ($side-circle-half * cos($rad) + px);
     }
