@@ -1,0 +1,163 @@
+
+// sin and cos in SASS
+// https://unindented.org/articles/trigonometry-in-sass/
+@function pi() {
+  @return 3.14159265359;
+}
+
+// power
+@function pow($number, $exp) {
+  $value: 1;
+  @if $exp > 0 {
+    @for $i from 1 through $exp {
+      $value: $value * $number;
+    }
+  }
+  @else if $exp < 0 {
+    @for $i from 1 through -$exp {
+      $value: $value / $number;
+    }
+  }
+  @return $value;
+}
+
+// factorial
+@function fact($number) {
+  $value: 1;
+  @if $number > 0 {
+    @for $i from 1 through $number {
+      $value: $value * $i;
+    }
+  }
+  @return $value;
+}
+
+@function rad($angle) {
+  $unit: unit($angle);
+  $unitless: $angle / ($angle * 0 + 1);
+  // If the angle has 'deg' as unit, convert to radians.
+  @if $unit == deg {
+    $unitless: $unitless / 180 * pi();
+  }
+  @return $unitless;
+}
+
+@function sin($angle) {
+  $sin: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+  }
+  @return $sin;
+}
+
+@function cos($angle) {
+  $cos: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+  }
+  @return $cos;
+}
+
+@function tan($angle) {
+  @return sin($angle) / cos($angle);
+}
+
+
+// hexagon variables
+$side-circle: 140;
+$side-circle-half: $side-circle / 2;
+
+$side-pulse: 140;
+$side-pulse-half: $side-pulse / 2;
+
+// position
+@for $y from 1 through 6 {
+  //deg to rad
+  $deg: (60 * $y) * (pi() / 180);
+  li:nth-child(#{$y}) {
+    top: ($side-pulse-half * sin($deg) + px);
+    left: ($side-pulse-half * cos($deg) + px);
+  }
+}
+
+.hexagon-sincos {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  ul {
+    width: $side-circle + px;
+    height: $side-circle + px;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  li {
+    width: $side-pulse + px;
+    height: $side-pulse + px;
+    border-radius: 50%;
+    position: absolute;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(102, 51, 153, .1);
+      opacity: 1;
+      transition: all 1s;
+    }
+
+    &:hover::after {
+      transform: scale(0.9);
+      background: rgba(102, 51, 153, .3);
+    }
+  }
+
+  &.dev {
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background: lightgray;
+      z-index: 99;
+    }
+
+    &::before {
+      width: 1px;
+      height: 100%;
+      top: 0;
+      left: 50%;
+    }
+
+    &::after {
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      left: 0;
+    }
+
+    ul {
+      background: rgba(102, 51, 153, .6);
+    }
+
+    li {
+      background: green;
+      opacity: 0.2
+    }
+  }
+}
