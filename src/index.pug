@@ -2,25 +2,25 @@ extends pug/global
 block content
   
   header
-    h1 alani marcel—terapeuta kósmico
+    //- h1 alani marcel—terapeuta kósmico
   
   ul.heart
     li.pulse
     li.pulse
     li.pulse
   
-  section.hexagon-sincos
-    - for (var a = 0; a < 2; a++)
-      .layer
-        - for (var b = 0; b < 6; b++)
-          ul
-            - for (var c = 0; c < 6; c++)
-              li
+  section.hexagon-sincos.dev
+    - for (var x = 0; x < 1; x++)
+      section.layer
+        ul
+          - for (var y = 0; y < 6; y++)
+            li
     
     //- always in the center
-    ul
-      - for (var c = 0; c < 6; c++)
-        li
+    section.center
+      ul
+        - for (var x = 0; x < 6; x++)
+          li
   
   ul.social
     li #[a(href='javascript:void(0)' title='Facebook' target='_blank') Facebook]
