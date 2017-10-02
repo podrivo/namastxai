@@ -8,13 +8,13 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: mintcream;
-  color: rebeccapurple;
+  background: ghostwhite;
+  color: #333;
   transition: all .3s;
 
   &.teste {
     background: rebeccapurple;
-    color: mintcream;
+    color: ghostwhite;
   }
 }
 

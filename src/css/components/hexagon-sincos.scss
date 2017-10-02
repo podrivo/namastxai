@@ -75,7 +75,7 @@
 
 
 // hexagon variables
-$side-circle: 140;
+$side-circle: 120;
 $side-circle-half: $side-circle / 2;
 $side-circle-double: $side-circle * 2;
 
@@ -89,15 +89,13 @@ $side-circle-double: $side-circle * 2;
   top: 0;
   left: 0;
   z-index: 99;
-  transform: rotate(30deg);
+  // transform: rotate(30deg);
 
 
 
 
 
   section.layer {
-    // width: $side-circle + px;
-    // height: $side-circle + px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -105,19 +103,7 @@ $side-circle-double: $side-circle * 2;
     right: 0;
     margin: auto;
 
-    // @for $x from 1 through 6 {
-    //   //deg to rad
-    //   $rad: (60 * $x) * (pi() / 180);
-    //   &:nth-child(#{$x}) {
-    //     top: ((($side-circle * 2)) * sin($rad) + px);
-    //     left: ((($side-circle * 2)) * cos($rad) + px);
-    //   }
-    // }
-
-    transform: rotate(60deg);
-    // ul position
     @for $x from 1 through 6 {
-      //deg to rad
       $rad: (60 * $x) * (pi() / 180);
       ul:nth-child(#{$x}) {
         top: ((($side-circle * 2)) * sin($rad) + px);
@@ -125,19 +111,17 @@ $side-circle-double: $side-circle * 2;
       }
     }
 
-    // &:nth-child(2) {
-    //   transform: rotate(0deg);
-    //   transform-origin: 50% 50%;
-    //   // li position
-    //   @for $x from 1 through 6 {
-    //     //deg to rad
-    //     $rad: (60 * $x) * (pi() / 180);
-    //     li:nth-child(#{$x}) {
-    //       top: ($side-circle * 1.5 * sin($rad) + px);
-    //       left: ($side-circle * 1.5 * cos($rad) + px);
-    //     }
-    //   }
-    // }
+    &:nth-child(2) {
+      // transform: rotate(30deg);
+
+      @for $x from 1 through 6 {
+        $rad: (60 * $x) * (pi() / 180);
+        ul:nth-child(#{$x}) {
+          top: ((($side-circle * 3)) * sin($rad) + px);
+          left: ((($side-circle * 3)) * cos($rad) + px);
+        }
+      }
+    }
   }
 
 
@@ -146,12 +130,7 @@ $side-circle-double: $side-circle * 2;
 
   // always in the center
   section  {
-    // width: $side-circle + px;
-    // height: $side-circle + px;
-
-    // li position
     @for $x from 1 through 6 {
-      //deg to rad
       $rad: (60 * $x) * (pi() / 180);
       li:nth-child(#{$x}) {
         top: ($side-circle-half * sin($rad) + px);
@@ -167,7 +146,7 @@ $side-circle-double: $side-circle * 2;
   ul, li {
     width: $side-circle + px;
     height: $side-circle + px;
-    background: rgba(102, 51, 153, .04);
+    background: rgba(102, 51, 153, .02);
     border-radius: 50%;
     position: absolute;
   }
@@ -191,16 +170,9 @@ $side-circle-double: $side-circle * 2;
       position: absolute;
       top: 0;
       left: 0;
-      // background: rgba(255, 255, 255, .9);
-      background: rgba(102, 51, 153, .04);
-      // box-shadow: inset 0 0 0 2px rebeccapurple;
+      background: rgba(102, 51, 153, .02);
       opacity: 1;
-      transition: all 0.6s;
-    }
-
-    &:hover::after {
-      transform: scale(0.9);
-      background: rgba(102, 51, 153, .2);
+      transition: all 0.3s;
     }
   }
 
