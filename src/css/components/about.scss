@@ -1,0 +1,19 @@
+.about {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // color: transparent;
+  transition: all .3s;
+
+  > .item {
+    width: 20%;
+
+    > h2 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+
+}

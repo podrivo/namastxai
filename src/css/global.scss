@@ -15,6 +15,10 @@ body {
   &.teste {
     background: rebeccapurple;
     color: ghostwhite;
+
+    .about {
+      color: ghostwhite;
+    }
   }
 }
 

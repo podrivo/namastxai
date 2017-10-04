@@ -1,8 +1,16 @@
 extends pug/global
 block content
   
-  header
-    h1 alani marcel—terapeuta kósmico
+  //- header.header
+  //-   h1 alani marcel—terapeuta kósmico
+  
+  aside.about
+    .item
+      h2 massagem ayurvédica - abhyanga
+      p corpo leve e energético, ativa inteligência, vivacidade, tônus, vitalidade sexual, autoconfiança e beleza natural
+    .item
+      h2 massagem ayurvédica - abhyanga
+      p corpo leve e energético, ativa inteligência, vivacidade, tônus, vitalidade sexual, autoconfiança e beleza natural
   
   ul.heart
     li.pulse
@@ -15,12 +23,11 @@ block content
           ul
             - for (var c = 0; c < 6; c++)
               li
-    
-    //- always in the center
     section.center
-      ul
-        - for (var x = 0; x < 6; x++)
-          li
+      - for (var b = 0; b < 3; b++)
+        ul
+          - for (var x = 0; x < 6; x++)
+            li
   
   ul.social
     li #[a(href='javascript:void(0)' title='Facebook' target='_blank') Facebook]
