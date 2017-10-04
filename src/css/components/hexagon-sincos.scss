@@ -1,8 +1,4 @@
 
-
-
-
-
 // sin and cos in SASS
 // https://unindented.org/articles/trigonometry-in-sass/
 @function pi() {
@@ -89,11 +85,8 @@ $side-circle-double: $side-circle * 2;
   top: 0;
   left: 0;
   z-index: 99;
-  // transform: rotate(30deg);
-
-
-
-
+  transform: rotate(30deg);
+  pointer-events: none;
 
   section.layer {
     position: absolute;

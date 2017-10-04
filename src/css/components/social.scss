@@ -4,21 +4,28 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: 30px;
   font-size: 12px;
   font-weight: bold;
-  z-index: 100;
+  z-index: 1000;
 
   a {
-    margin: 0 12px;
+    margin: 30px;
+    display: block;
     text-decoration: none;
     color: inherit;
     border-bottom: 2px solid transparent;
     transition: border-bottom-color .3s;
 
+
     &:hover {
       color: inherit;
       border-bottom-color: inherit;
     }
+  }
+
+  li:first-child a {margin-right: 12px;}
+  li:last-child a {
+    margin-right: 40px;
+    margin-left: 12px;
   }
 }

@@ -1,6 +1,9 @@
-var body = document.getElementsByTagName('body');
-var element = body[0];
+var bodyArr = document.getElementsByTagName('body');
+var headerArr = document.getElementsByTagName('header');
 
-// element.onclick = function() {
-//   this.classList.toggle('teste');
-// };
+var body = bodyArr[0];
+var header = headerArr[0];
+
+header.onclick = function() {
+  body.classList.toggle('teste');
+};

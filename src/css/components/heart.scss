@@ -1,5 +1,6 @@
 .heart {
   z-index: 998;
+  pointer-events: none;
 
   > .pulse {
     width: 0;
@@ -8,7 +9,6 @@
     border: 25px solid rebeccapurple;
     opacity: 0;
     z-index: -2;
-    pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;
