@@ -4,13 +4,14 @@
   justify-content: center;
   align-items: center;
   margin: 0 40px;
-  // color: transparent;
-  transition: all .3s;
 
   > .item {
     width: 20%;
     min-height: 154px;
     padding: 0 20px;
+    opacity: 0;
+    color: ghostwhite;
+    transition: opacity $timing;
 
     > h2 {
       font-size: 14px;

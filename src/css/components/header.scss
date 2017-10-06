@@ -9,6 +9,7 @@
   flex-direction: column;
   z-index: 999;
   position: absolute;
+  transition: opacity $timing;
 
   h1 {
     font-size: 56px;

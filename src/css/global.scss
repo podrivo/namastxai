@@ -1,3 +1,5 @@
+$timing: .3s;
+
 html, body {
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -12,17 +14,14 @@ body {
   color: #333;
   transition: all .3s;
 
-  &.teste {
+  &.about-on {
     background: rebeccapurple;
-    color: ghostwhite;
-
-    .about {
-      color: ghostwhite;
-    }
+    .header {opacity: 0;}
+    .about, .social a {color: ghostwhite;}
+    .about .item {opacity: 1;}
   }
 }
 
 *::selection {
-  background: rebeccapurple;
-  color: white;
+  background: transparent;
 }
