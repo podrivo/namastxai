@@ -99,7 +99,7 @@ $altura-fix: $side-hex - $altura-hex;
     }
 
     &:hover::after {
-      transform: scale(0.4);
+      transform: scale(.4);
       background: rgba(102, 51, 153, .2);
       // opacity: 0;
     }

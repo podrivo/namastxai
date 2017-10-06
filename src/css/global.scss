@@ -12,7 +12,7 @@ body {
   overflow: hidden;
   background: ghostwhite;
   color: #333;
-  transition: all .3s;
+  transition: background $timing;
 
   &.about-on {
     background: rebeccapurple;

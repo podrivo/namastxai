@@ -12,8 +12,7 @@
     @for $i from 1 through $exp {
       $value: $value * $number;
     }
-  }
-  @else if $exp < 0 {
+  } @else if $exp < 0 {
     @for $i from 1 through -$exp {
       $value: $value / $number;
     }
@@ -88,7 +87,7 @@ $side-circle-double: $side-circle * 2;
   transform: rotate(30deg);
   pointer-events: none;
 
-  section.layer {
+  .layer {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -98,6 +97,7 @@ $side-circle-double: $side-circle * 2;
 
     @for $x from 1 through 6 {
       $rad: (60 * $x) * (pi() / 180);
+
       ul:nth-child(#{$x}) {
         top: ((($side-circle * 2)) * sin($rad) + px);
         left: ((($side-circle * 2)) * cos($rad) + px);
@@ -109,6 +109,7 @@ $side-circle-double: $side-circle * 2;
 
       @for $x from 1 through 6 {
         $rad: (60 * $x) * (pi() / 180);
+
         ul:nth-child(#{$x}) {
           top: ((($side-circle * 3)) * sin($rad) + px);
           left: ((($side-circle * 3)) * cos($rad) + px);
@@ -125,6 +126,7 @@ $side-circle-double: $side-circle * 2;
   section  {
     @for $x from 1 through 6 {
       $rad: (60 * $x) * (pi() / 180);
+
       li:nth-child(#{$x}) {
         top: ($side-circle-half * sin($rad) + px);
         left: ($side-circle-half * cos($rad) + px);
@@ -165,7 +167,7 @@ $side-circle-double: $side-circle * 2;
       left: 0;
       background: rgba(102, 51, 153, .02);
       opacity: 1;
-      transition: all 0.3s;
+      transition: all .3s;
     }
   }
 
@@ -203,7 +205,7 @@ $side-circle-double: $side-circle * 2;
 
     li {
       background: green;
-      opacity: 0.2
+      opacity: .2;
     }
   }
 }

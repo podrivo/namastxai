@@ -23,7 +23,10 @@
     }
   }
 
-  li:first-child a {margin-right: 12px;}
+  li:first-child a {
+    margin-right: 12px;
+  }
+
   li:last-child a {
     margin-right: 40px;
     margin-left: 12px;
