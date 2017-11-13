@@ -12,8 +12,14 @@
   transition: opacity $timing;
 
   h1 {
-    font-size: 56px;
+    font-size: 3.2em;
     font-weight: 700;
     letter-spacing: -.06em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header h1 {
+    font-size: 1.6em;
   }
 }

@@ -1,6 +1,14 @@
 .heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 998;
   pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   > .pulse {
     width: 0;
@@ -10,11 +18,6 @@
     opacity: 0;
     z-index: -2;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
 
     &:nth-child(1) {
       animation: pulse 8s cubic-bezier(.19, 1, .22, 1) infinite;

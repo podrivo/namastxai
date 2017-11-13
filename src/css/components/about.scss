@@ -5,6 +5,17 @@
   align-items: center;
   margin: 0 40px;
 
+  > img {
+    border-radius: 50%;
+    position: absolute;
+    top: -460px;
+    bottom: 0;
+    margin: auto;
+    width: 160px;
+    height: 160px;
+    opacity: 0;
+  }
+
   > .item {
     width: 20%;
     min-height: 154px;
@@ -26,5 +37,26 @@
       line-height: 18px;
     }
   }
+}
 
+@media screen and (max-width: 600px) {
+  .about {
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0 20px;
+
+    > img {
+      position: relative;
+      top: 0;
+      margin: 40px auto 20px;
+    }
+
+    > .item {
+      width: 100%;
+      min-height: auto;
+      padding: 0 0 20px;
+
+      &:last-child {padding: 0;}
+    }
+  }
 }

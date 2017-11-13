@@ -5,6 +5,7 @@ block content
     h1 alani marcel—terapeuta kosmico
   
   aside.about
+    img(src='img/alani-foto.png' alt='alani marcel')
     .item
       h2 — <br> massagem ayurvédica - abhyanga
       p corpo leve e energético, ativa inteligência, vivacidade, tônus, vitalidade sexual, autoconfiança e beleza natural
@@ -43,10 +44,10 @@ block content
     li #[a(href='https://instagram.com/namastxai' title='namastxai @ Instagram' target='_blank') Instagram]
   
   //- Google Analytics
-  script(async src="https://www.googletagmanager.com/gtag/js?id=UA-1769352-42")
-  script
-    window.dataLayer = window.dataLayer || [];
+  script(src='https://www.googletagmanager.com/gtag/js?id=UA-1769352-42' async)
+  script.
+    window.dataLayer = window.dataLayer || []
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-1769352-42');
+    gtag('js', new Date())
+    gtag('config', 'UA-1769352-42')
 
